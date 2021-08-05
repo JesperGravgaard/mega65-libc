@@ -32,11 +32,11 @@ void lcopy(long source_address, long destination_address,
 	   unsigned int count);
 void lfill(long destination_address, unsigned char value,
 	   unsigned int count);
-#ifdef __CC65__
+#if defined(__CC65__) ||  defined(__KICKC__)
 #define POKE(X,Y) (*(unsigned char*)(X))=Y
 #define PEEK(X) (*(unsigned char*)(X))
 #else
-#define POKE(X,Y)
+#define POKE(X,Y) 
 #define PEEK(X)
 #endif
 
