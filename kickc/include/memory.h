@@ -25,12 +25,12 @@ extern struct dmagic_dmalist dmalist;
 extern unsigned char dma_byte;
 
 void mega65_io_enable(void);
-unsigned char lpeek(long address);
-unsigned char lpeek_debounced(long address);
-void lpoke(long address, unsigned char value);
-void lcopy(long source_address, long destination_address,
+unsigned char lpeek(unsigned long address);
+unsigned char lpeek_debounced(unsigned long address);
+void lpoke(unsigned long address, unsigned char value);
+void lcopy(unsigned long source_address, unsigned long destination_address,
 	   unsigned int count);
-void lfill(long destination_address, unsigned char value,
+void lfill(unsigned long destination_address, unsigned char value,
 	   unsigned int count);
 #if defined(__CC65__) ||  defined(__KICKC__)
 #define POKE(X,Y) (*(unsigned char*)(X))=Y
